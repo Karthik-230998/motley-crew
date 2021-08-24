@@ -1,27 +1,21 @@
-node{
+node {
 
-stage('SCM Checout'){
-     echo"make checkout"
-     //git credentials: 'karthik-230998', url: https://github.com/Karthik-230998/motley-crew.git'
-     }
+      stage('SCM checkout'){
+         git credentialsId: 'github', url: 'https://github.com/Karthik-230998/motley-crew.git'
+         }
+         
+         stage("Build") {
+             echo "Building"
+             }
+             
+             stage("Test") {
+             echo "Testing"
+             }
+             
+             stage ("Deploy") {
+             echo "Deploying"
+             }
+             }
      
-     stage('Build project'){
      
-     echo"Build my project successfully"
-     }
-     
-   stage('Test project'){
-   
-   echo"Test my project succesfully"
-   }
-   
-   stage('Deploy project'){
-   
-   echo"Deploy the project succesfully"
-   }
-   stage('Release the project succesfully'){
-   
-   echo"Finally read to release my groovy script"
-   }
-   }
-     
+  
